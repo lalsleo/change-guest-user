@@ -4,12 +4,14 @@
   
   tasks:
   - name: Remove guest username
-    ansible.windows.win_user:
+    win_user:
+    #ansible.windows.win_user:
       name: "{{ guest_username_old }}"
       state: absent
       
   - name: Create guest username with different name
-    ansible.windows.win_user:
+    win_user:
+    #ansible.windows.win_user:
       name: "{{ guest_username_new }}"
       state: present
       account_disabled: yes
